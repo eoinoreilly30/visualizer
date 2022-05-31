@@ -1,0 +1,41 @@
+{
+  "name": "grid-paint-web",
+  "version": "1.0.0",
+  "description": "Frontend for grid paint",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "webpack serve --config ./webpack.config.js --mode development",
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify",
+    "tailwind-watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --minify --watch",
+    "build": "npm run tailwind && webpack --config ./webpack.config.js --mode production",
+    "deploy": "npm run build && firebase deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eoinoreilly30/grid-paint.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eoinoreilly30/grid-paint/issues"
+  },
+  "homepage": "https://github.com/eoinoreilly30/grid-paint#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^10.2.4",
+    "tailwindcss": "^3.0.23",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "dependencies": {
+    "firebase": "^9.6.8"
+  }
+}
